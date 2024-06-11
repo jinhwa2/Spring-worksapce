@@ -1,1 +1,12 @@
-@charset "EUC-KR";
+@charset "utf-8";
+.containner {
+	width :50vw;
+	height :400px;
+	margin : auto;
+	background-color : lightpink;
+}
+
+.containner img {
+	width : 19%;
+	height :auto;
+}

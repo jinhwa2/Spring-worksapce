@@ -86,7 +86,6 @@ public class ParameterController {
 	 *              
 	 *400 Bad Request(잘못된 요청)
 	 *파라미터 불충분             
-	 
 	 */
 	@PostMapping("test2")
 	public String paramTest2( /*@RequestParam */) {

@@ -27,21 +27,19 @@ public class BlogController {
 	public String blogComment (BlogDTO blogDTO) {
 			                  
 			                  //*ModelAttribute 사용해서 BlogDTO blogDTO*/
-		log.info("블로그 댓글 작성 공간");
+log.info("블로그 댓글 작성 공간");
+		
 		BlogDTO bd = new BlogDTO();
 		
 		bd.getCommentName();
 		bd.getCommentOpinion();
+		
 		bd.setCommentName("홍길동");
 		bd.setCommentOpinion("잘봤습니다.");
 		
-		log.debug("commentName : " + commentName);
-		log.debug("commentOpinion : " + commentOpinion);
-		
-		log.info("블로그 댓글 작성 완료하고 다시 블로그 메인페이지로 돌아가기");
+		log.info("bd 에 작성한 내용 보기" + bd.toString());
 		
 		return "redirect:/blog/blog-index";
-			) {
 	}
 
 }

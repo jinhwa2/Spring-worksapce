@@ -165,23 +165,23 @@ public class ParameterController {
 		mem.getMemerName();
 		mem.getMeberPw();
 		mem.getMemberId();
-
+		log.info("inputMember에 대한 get 정보 가져오기 : " + inputMember.toString());
+		
+		
 		mem.setMemberAge(0); // setter를 통해 나이 가져오기
 		mem.setMemerName("가나다");
 		mem.setMeberPw("pass01");
 		mem.setMemberId("1");
-		log.info("inputMember에 대한 get 정보 가져오기 : " + inputMember.toString());
+		//getter setter 이용해서 
 		// 굳이 따로 만들지 않아도 lombok @Getter @Setter 를 만들어서 가져오기
-
-		// getter setter이용해서
 		// private String memberId;
 		// private String memberPw;
 		// private String memgerName; ("가나다");
 		// 굳이 따로 만들지 않아도 lombok @Getter @Setter를 만들어 가져오기 때문에
 		// 사용 가능한 것
 
-		log.info("inputMember에 대한 정보 가져오기 : " + inputMember.toString());
-		return "redirect :/param/main";
+		log.info("inputMember에 대한 set 정보 가져오기 : " + inputMember.toString());
+		return "redirect:/param/main";
 
 		/*
 		 * org.thymeleaf.exceptions.TemplateInputException: Error resolving template [],

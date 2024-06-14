@@ -149,6 +149,54 @@ public class ExampleController {
 		return "example/ex3";
 	}
 	
+	@GetMapping("ex4")
+    public String ex4(Model model) {
+		//아직 std로 전달해준 값이 없기 때문에 th:unless 안에 작성해준
+		//std 없음이 뜨는 것이 정상
+		
+		StudentDTO std = new StudentDTO("7890","피카츄",22);
+		model.addAttribute("std", std);
+		
+		// 1234 둘리 33
+		MemberDTO mem = new MemberDTO("1234","둘리","33");
+		model.addAttribute("mem", mem);
+		model.addAttribute("testIf", "테스트중");
+		
+		
+		//num 100을 주고
+		//<h4 th:case="100">AAAAAAAAAA</h4>
+		model.addAttribute("num", 300);
+		model.addAttribute("alpha","A");
+		return "example/ex4";
+		
+		
+	}
+	
+	@GetMapping("ex5")
+	public String ex5(Model model) {
+		//message 값으로 전달할 값 작성하기
+		
+		model.addAttribute("message","타임리프 + 자바스크립트 사용 예제");
+		
+		//std로 어떤 값을 저장해서 전달해준 것이 없음
+		StudentDTO std = new StudentDTO();
+		std.setStudentNo("2222");
+		std.setName("한진화");
+		
+		MemberDTO mem = new MemberDTO();
+		mem.setMemberNo("1111");
+		mem.setMemberName("박세모");
+		mem.setMemberAge("42");
+		
+		model.addAttribute("mem",mem);
+		
+		
+				
+	    model.addAttribute("std",std);
+	    
+	    
+		return "example/ex5";
+	}
 	
 	
 	

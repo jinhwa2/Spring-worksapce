@@ -15,35 +15,26 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping
 @Slf4j
 public class CafeController {
-	/*
-	@PostMapping("cafe_index")
-	
-	public String cafeMainComment(@RequestParam("cafeCommetName") String cafeCommetName,
-			                      @RequestParam("cafeCommentOpinion") String cafeCommentOpinion
-	
-			
-			
-			) {
-		 log.info("블로그 댓글 작성 공간");
-			
-			log.debug("cafeCommetName:" +cafeCommetName);
-			log.debug("cafeCommentOpinion:" +cafeCommentOpinion);
-		return "redirect:/cafe/cafe_index" ;
-       
-	}
-	
-	
-	
 	//@어노테이션 PostMapping(만남의주소)
-	//메서드 cafeMainComment
-	
-	//@어노테이션 RequestParam cafeCommentName cafeCommentOpinion
-			//log info 로 돌와왔는지 확인
-			//log debug  cafeCommentName  cageCommentOpinion 넣기
-	//return redirect cafe_index로 돌아가기
-*/
-	//CafeDTO cafe_board
-	//->@PostMappping("cafe_index") ModelAttribute 받아오기
+		//메서드 cafeMainComment
+		/*
+		@PostMapping("cafe_index")
+		public String cafeMainComment(@RequestParam("cafeCommentName") String cafeCommentName,
+									  @RequestParam("cafeCommentOpinion") String cafeCommentOpinion
+				) {
+			log.info("카페 메인으로 이동하기");
+			log.debug("cafeCommentName : " + cafeCommentName);
+			log.debug("cafeCommentOpinion : " + cafeCommentOpinion);
+			return "redirect:/cafe/cafe_index";
+		}
+		//@어노테이션 RequestParam cafeCommentName cafeCommentOpinion
+			//log info로 들어왔는지 확인
+			//log debug로  cafeCommentName cafeCommentOpinion 넣기
+		//return redirect cafe_index로 돌아가기 
+		*/
+		//CafeDTO  cafe_board
+		
+		//-> @PostMapping("cafe_index")  ModelAttribute 받아오기
 	
 	public String cafeIndexComment(CafeDTO cafeDTO) {
 		

@@ -58,46 +58,52 @@ public class ParameterController {
 		log.debug("로그로 이름확인 : " + inputName);
 		log.debug("로그로 나이확인 : " + inputAge);
 		log.debug("로그로 주소확인 : " + inputAddress);
+		
 		/*
-		 * spring에서 Redirect(재요청) 하는 방법 Controller 매서드 반환 값에 redirect:요청주소 작성 되돌아가짐
-		 */
-
+		 * spring에서 Redirect(재요청) 하는 방법
+		 * Controller 메서드 반환 값에
+		 * redirect:요청주소 작성
+		 * 되돌아가짐
+		 * */
+		
 		return "redirect:/param/main";
 
 	}
 
 	/*
-	 * 2. @RequestParam - 낱개( 한 개, 단 수) 개 파라미터 얻어오기
+	 * 2. @RequestParam - 낱개(한 개, 단 수)개 파라미터 얻어오기
 	 * 
-	 * - request 객체를 이용한 파라미터 전달 어노테이션 - 매개 변수 앞에 해당 어노테이션을 작성하면, 매개변수에 값이 작성됨 -
-	 * 작성되는 데이터는 매개 변수(파라미터) 타입이 맞게 형변환이(parse) 자동으로 수행
-	 * 
+	 *  - request 객체를 이용한 파라미터 전달 어노테이션
+	 *  - 매개 변수 앞에 해당 어노테이션을 작서하면, 매개변수에 값이 작성됨
+	 *  - 작성되는 데이터는 매개 변수(파라미터) 타입이 맞게 형변환이(parse) 자동으로 수행
 	 * 
 	 * [속성 추가 작성법]
-	 * 
 	 * @RequestParam(value="name", required="false", defaultValue="1")
 	 * 
 	 * value = 전달받은 input 태그의 name 속성값
 	 * 
-	 * required = 입력된 name 속성값 파라미터(매개변수) 필수 여부 지정 (기본값 true) ->required = true인
-	 * 파라미터게 존재하지 않는다면 400 Bad Request 에러 발생 ->required = true인 파라미터가 null인 경우에도 400
-	 * Bad Request 에러 발생 defaultValue = 파라미터 중 일치하는 name 속성값이 없을 경우 대입할 값 지정
-	 * ->required가 false일 경우 사용
+	 * required = 입력된 name 속성값 파라미터(매개변수) 필수 여부 지정 (기본값 true)
+	 * 			-> required = true인 파라미터가 존재하지 않는다면 400 Bad Request 에러 발생
+	 * 			-> required = true인 파라미터가 null인 경우에도 400 Bad Request 에러 발생
 	 * 
-	 * 
-	 */
+	 *  defaultValue = 파라미터 중 일치하는 name 속성 값이 없을 경우 대입할 값 지정
+	 *  		-> required가 false일 경우 사용
+	 * */
+	
 	// 400 Bad Request(잘못된 요청)
-	// - 파라미터 불충분
+	// - 파라미터
 	/*
-	 * 책 제 목 : <input type="text" name="title"><br> 작 성 자 : <input type="text"
-	 * name="writer"><br> 가 격 : <input type="number" name="price"><br> 출 판 사 :
-	 * <input type="text" name="publisher"><br>
+	 * 	책 제 목 : <input type="text" name="title">    <br>
+		작 성 자 : <input type="text" name="writer">   <br>
+		가    격 : <input type="number" name="price">  <br>
+		출 판 사 : <input type="text" name="publisher"><br>
 	 * 
-	 */
-	@PostMapping("test2")
-	public String paramTest2(@RequestParam(/* value= */"title"/* , required=true */) String title,
-			@RequestParam("writer") String writer, @RequestParam("price") int price,
-			@RequestParam(value = "publisher", defaultValue = "교보문고", required = false) String publisher
+	 * */
+	@PostMapping("test2")//   /param/test2
+	public String paramTest2(@RequestParam(/*value=*/"title"/*, required=true*/) String title,
+			 @RequestParam(          "writer"                  ) String writer,
+			 @RequestParam(           "price"                  ) int price,
+			 @RequestParam(value="publisher",defaultValue="교보문고", required=false) String publisher
 
 	) {
 		log.info("문제없이 insert 가능한지 확인하기");

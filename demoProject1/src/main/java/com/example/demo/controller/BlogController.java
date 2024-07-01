@@ -10,7 +10,7 @@ import com.example.demo.model.dto.BlogDTO;
 
 import lombok.extern.slf4j.Slf4j;
 
-//어노테이션(@)이용ㅎ애서, controller requestMapping("blog", slf4j 설정
+//어노테이션(@)이용해서서, controller requestMapping("blog", slf4j 설정
 @Controller
 @RequestMapping("blog")
 @Slf4j

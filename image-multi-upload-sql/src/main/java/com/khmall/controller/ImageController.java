@@ -58,6 +58,7 @@ public class ImageController {
 				paramMap.put("file_name", fileName);
 				paramMap.put("upload_dir", uploadDir);
 				
+				
 				// Mybatis를 사용한 Mapper를 이용해서 DB 삽입
 				//The method insertImageUpload(ImageUpload) in the type ImageUploadMapper is not applicable for the arguments (Map<String,Object>)
 				//paramMap 의 경우 Map<String, Object> 로 값을 전달해주지만
